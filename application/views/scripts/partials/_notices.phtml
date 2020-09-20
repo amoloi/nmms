@@ -1,0 +1,19 @@
+<div class="full_width" id="flash_messages">
+    <section class="successMessages">
+         <?php echo($this->flashMessages); ?>           
+    </section>
+</div>
+<?php if(count($this->errors) != 0): ?>
+    <div class="full_width error" id="error_messages">
+        <section class="errorMessages">
+            <ul class="">
+                <?php foreach ($this->errors as $value): ?>
+                   <li><?php echo $value; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </section>
+    </div>
+<?php endif; ?>
+<section class="full_width" id="errors">
+    
+</section>

@@ -1,0 +1,54 @@
+<?php echo $this->partial('/partials/_title.phtml', array('title' => $this->title)) ?>  		
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages(),
+                                                                   'errors'=>$this->errors,)) ?>                       
+    </p>
+    <article class="col_4 first">
+
+    </article>
+    <article class="col_4">
+
+        <div> 
+            <section>
+                <div>
+                    <div>
+                        <em>
+                            (Please provide your username/password below to login)
+                        </em>
+                    </div>
+                    <?php //echo $this->form; ?>
+                    <section>
+                        <div>
+                        <form method="post" action="/account/login/" enctype="multipart/form-data" name="frmECB">
+                                         
+                                         <dl>
+                                         <dt><label class="col" for="username">Username <span> This is your username.</span></label></dt>
+                                         <dd><input type="text" class="col_7" id="username" name="username" /></dd>                                             
+                                         <dt><label class="col" for="password">Password <span> This is your password.</span></label></dt>
+                                         <dd><input type="password" id="password" class="col_7" name="password" /></dd>
+                                         <dd>
+                                         </dd>
+                                         </dl>
+                                             
+                                       
+                            <hgroup>
+                                <button type="submit" class="col_ frm-btn green" id="cmd_save" name="cmd_save">Login <i class="icon-angle-right"></i></button>
+
+                            </hgroup> 
+                        </form>
+                            <section class="loginmeta">
+                                <a href="">Recover My password</a>
+                            </section>
+                        </div>
+                        <?php ?>   
+                    </section> 
+
+                    <?php //echo $this->form; ?>
+
+                </div>
+                <?php ?>
+            </section>
+    </article>
+    <article class="col_4 last"></article>
+</section>

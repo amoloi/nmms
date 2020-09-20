@@ -1,0 +1,62 @@
+<article class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+<div class="row search-row">
+  <div class="col-lg-6">
+      <form action="<?php echo $this->escape($this->url(array('controller'=>'search','action'=>'member','module'=>'') , null , true)) ?>" name="searchForm" method="post">
+        <div class="input-group input-group-sm">
+            <input placeholder="Search" type="text" name="q" value="<?php echo $this->escape($this->q); ?>" class="form-control">
+          <span class="input-group-btn">
+              <button class="btn btn-default" type="submit"> <i class="fa fa-search"></i> </button>
+          </span>
+        </div><!-- /input-group -->          
+      </form>
+
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row --> 
+		</section>
+    		<section>
+<table class="table table-list table-striped table-hover">
+    <caption></caption>
+        <thead>
+            <tr><td colspan="4" class="text-right">                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'new','module'=>'') , null , true)) ?>">
+                                    Create a new member <i class="fa fa-arrow-circle-right"></i>
+                                </a></td></tr>
+            <tr class="alt first last">
+                    <th rel="0" value=""><i class="icon-file"></i></th>
+                    <th rel="1" value="Document Name">Member`s Full Name</th>
+                    <th rel="2" value="Document Type">Member`s Company</th>
+                    <th rel="3" value="Actions">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($this->paginator as $key => $value):?>
+                    <tr class="first last">
+                          <td value=""><i class="icon-user"></i></td>
+                          <td value="<?php echo $this->escape($value['member_fulname']); ?>"><?php echo $this->escape($value['member_fulname']); ?></td>
+                          <td value="<?php echo $this->escape($value['company_name']); ?>"><?php echo $this->escape($value['company_name']); ?></td>
+                          <td class="actions text-right" value="Download Open">
+                              <a href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'finance','module'=>'','id'=>$this->escape($value['id'])) , null , true)) ?>"><i class="fa fa-money"></i> Finance</a> &VerticalSeparator;
+                              <a href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'edit','module'=>'','id'=>$this->escape($value['id'])) , null , true)) ?>"><i class="fa fa-edit"></i> Edit </a> <!-- &VerticalSeparator;
+                              <a href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'details','module'=>'','id'=>$this->escape($value['id'])) , null , true)) ?>"><i class="icon-link"></i> Details </a> --> &VerticalSeparator;
+                              <a href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'terminate','module'=>'','id'=>$this->escape($value['id'])) , null , true)) ?>" onclick="return terminate('The chosen member will be permanently removed from your system, are you sure?');"><i class="fa fa-eraser"></i> Terminate </a>
+                          </td>
+                      </tr>                
+            <?php endforeach; ?>
+        <tfoot>
+            <tr><td colspan="4" class="text-right">                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'new','module'=>'') , null , true)) ?>">
+                                    Create a new member <i class="fa fa-arrow-circle-right"></i>
+                                </a></td></tr>            
+            <tr>
+                <td colspan="4">
+                    <?php echo $this->paginationControl($this->paginator, 'Elastic', '/partials/pagination.phtml'); ?>
+                    <?php //echo $this->partial('/partials/pagination.phtml',array('flashMessages'=>$this->flashMessages())) ?>
+                </td>
+            </tr>
+        </tfoot>
+        </tbody>
+</table>
+</section>    
+</article>

@@ -1,0 +1,64 @@
+<!-- ===================================== END HEADER ===================================== -->
+<div class="container callout">
+<div class="grid header-top">
+
+<!-- 
+
+ADD YOUR HTML ELEMENTS HERE
+
+Example: 2 Columns
+-->
+<div class="col_12 app-header">
+<header>
+    <div class="col_2 logowrap">
+        <img src="<?php echo  $this->baseUrl('images/logo.jpg'); ?>" alt="NATAU - Namibia Logo" width="180px" height="150px" />
+    </div>
+    <div class="col_10">
+
+        <h5 style="margin: 60px auto auto auto">NATAU MEMBERSHIP MANAGEMENT SYSTEM</h5>
+
+    </div>
+</header>	
+</div>
+<div class="col_12 app-menu -top-margin">
+</div><!-- END GRID-->
+</div>
+<!-- ===================================== END HEADER ===================================== -->
+<div class="container callout">
+<div class="grid m-header">
+
+<!-- 
+
+ADD YOUR HTML ELEMENTS HERE
+
+Example: 2 Columns
+-->
+<header class="col_12 -top-margin" id="title-calout">
+    <?php 
+        $applicatilicense = explode('license', Zend_Controller_Front::getInstance()->getRequest()->getControllerName());
+
+        //count($applicatilicense);
+        if(count($applicatilicense) == 2){
+            $title_addition = ' : ' . strtoupper($applicatilicense[0]) . ' LICENSE';
+        }  else {
+            $title_addition = null;
+        }
+        ?>
+    <div class="col_5 title-text inner"><h5 class="home"><a class="home-link" href="<?php echo $this->escape($this->baseUrl('/')) ?>"><i class="icon-home"></i> NMMS </a><span><?php echo $title_addition; ?></span></h5></div>
+	<div class="col_7">
+            <nav>
+                <ul class="menu">
+                    <li><a href="<?php echo $this->baseUrl('/'); ?>">Overview</a></li>
+                    <li><a href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'index','module'=>'') , null , true)) ?>"><i class="icon-user"></i> Members</a></li>
+                    <li><a href="<?php echo $this->escape($this->url(array('controller'=>'companies','action'=>'index','module'=>'') , null , true)) ?>"><i class="icon-briefcase"></i> Companies</a></li>
+                    <li><a href="<?php echo $this->escape($this->url(array('controller'=>'reports','action'=>'index','module'=>'') , null , true)) ?>"><i class="icon-envelope"></i> Reports</a></li>
+
+                    <li class=""><a href="<?php echo $this->escape($this->url(array('controller'=>'finance','action'=>'index','module'=>'') , null , true)) ?>"><i class="icon-money"></i> Finance </a></li>                
+                </ul>
+            </nav>
+        </div>
+</header>
+</div><!-- END GRID-->
+</div>
+
+<!-- ===================================== END HEADER ===================================== -->

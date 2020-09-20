@@ -1,0 +1,173 @@
+<?php echo $this->partial('/partials/_title.phtml',array('title'=>$this->title)) ?>  		
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages(),
+                                                                   'errors'=>$this->errors,)) ?>                         
+    </p>
+    <?php
+
+    ?>
+    		<section>
+
+                    <div> 
+ 		<section>
+                    <div>
+                        <div>
+                            <em>
+                                 Hi , Welcome to your ECB-CLEMS Account.
+                                 <p>
+                                     Here you can amongst other things use our online services as listed on the menu located on the left side of the screen.
+                                 </p>
+                                <ul>
+                                    <li>Application for Licenses(Transmission , Distribution and Supply , Import and Export , and Trading)</li>
+                                    <li>Application Status</li>
+                                </ul>
+                            </em>
+                        </div>
+                        <?php //echo $this->form; ?>
+    		<section>
+                    <fieldset>
+                                             <legend>Your Applications Status</legend>
+                                                        <table cellspacing="0" cellpadding="0" class="sortable list">
+                                                                <thead><tr class="alt first last">
+                                                                        <th value="Application No" rel="0"><i class="icon-file"></i></th>
+                                                                        <th value="Applicant Name" rel="1">Application Type</th>
+                                                                        <th value="Applicant Name" rel="1">Application Date</th>
+                                                                        <th value="Status" rel="2">Application Status</th>
+                                                                        <th value="Actions" rel="3">Actions</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr class="first last">
+                                                                        <td value="G-122013"><i class="icon-file"></i></td>
+                                                                        <td value="Innocent Energy">Transmission</td>
+                                                                        <td value="Submitted">23/10/2013</td>
+                                                                        <td value="Submitted">Submitted</td>
+                                                                        <td value="" class="actions">
+                                                                            <a href=""><i class="icon-download-alt"></i> Details</a>
+                                                                            <a href=""><i class="icon-link"></i> Re-submit</a>
+                                                                        </td>
+                                                                </tr>
+                                                                <tr class="first last">
+                                                                        <td value="G-122013"><i class="icon-file"></i></td>
+                                                                        <td value="Innocent Energy">Generation</td>
+                                                                        <td value="Submitted">05/05/2013</td>
+                                                                        <td value="Submitted">Approved</td>
+                                                                        <td value="" class="actions">
+                                                                            <a href=""><i class="icon-download-alt"></i> Details</a>
+                                                                            <a href=""><i class="icon-link"></i></a>
+                                                                        </td>
+                                                                </tr>
+                                                                </tbody>
+ 
+                                                </table> 
+                    </fieldset>
+                    <div>
+                        <?php //echo $this->form; ?>
+                        <form method="post" action="/clients/register/" enctype="multipart/form-data" name="frmECB">
+                                         <fieldset>
+                                             <legend>Your Account Details</legend>
+                                         <dl>
+                                         <dt><label class="col" for="">E-mail <span>Your email address is your username.</span></label></dt>
+                                         <dd><input type="text" class="col_7" name="email_address" value="<?php echo $this->escape($this->account_data['email_address']) ?>" /></dd>
+                                         <dt><label class="col" for="">Password</label></dt>
+                                         <dd><input type="password" class="col_7" name="password" /></dd>
+                                         <dt><label class="col" for="">Confirm Password</label></dt>
+                                         <dd><input type="password" class="col_7" name="cpassword" /></dd>
+                                         <dd>
+                                             <em>
+                                                 Passwords must contain at least one number, both upper and lower case letters, and be at least 8 characters long.
+                                             </em>
+                                         </dd>
+                                         </dl>
+                                         </fieldset>
+                                         <fieldset>
+                                             <legend>Your Personal Information</legend>
+                                         <dl>
+                                         <dl>
+                                             <dt><label for="">First Name</label></dt>
+                                             <dd><input type="text" class="col_7" name="apl_regdocument_desc" /></dd>
+                                             <dt><label for="">Last Name</label></dt>
+                                             <dd><input type="text" class="col_7" name="apl_cert_desc" /></dd>
+                                             <dt><label for="">Job Title</label></dt>
+                                             <dd><input type="text" class="col_7" name="apl_cert_desc" /></dd>                                             
+                                         </dl>                                             
+                                        <dd>
+                                         </dl>
+                                         </fieldset>                            
+                                         <fieldset>
+                                             <legend>Your Address and Contact Details</legend>
+                                         <dl>
+                                             <dt id="per_Country-label"><label class="required" for="per_Country">Country</label></dt>
+                                             <dd id="per_Country-element">
+                                             <select class="col_7 column" id="per_Country" name="per_Country">
+                                                 <option value="TZ">Namibia</option>
+                                                 <option value="NAM">Angola</option>
+                                                 <option value="NAM">Tanzania</option>
+                                                 <option value="NAM">South Africa</option>
+                                                 <option value="NAM">South Sudan</option>
+                                             </select></dd>                                             
+                                             <dt id="per_Country-label"><label class="required" for="per_Country">Region</label></dt>
+                                             <dd id="per_Country-element">
+                                             <select class="col_7 column" id="per_Country" name="per_Country">
+                                                 <option value="TZ">Khomas</option>
+                                                 <option value="NAM">Erongo</option>
+                                             </select></dd>
+                                             <dt id="per_Nationality-label"><label class="required" for="per_Nationality">Town/City</label></dt>
+                                             <dd id="per_Nationality-element">
+                                             <select class="col_7 column" id="per_Nationality" name="per_Nationality">
+                                                 <option value="TZ">Windhoek</option>
+                                                 <option value="NAM">Wlavis Bay</option>
+                                             </select></dd>
+                                             <dt id="per_Nationality-label"><label class="required" for="per_Nationality">Constituency</label></dt>
+                                             <dd id="per_Nationality-element">
+                                             <select class="col_7 column" id="per_Nationality" name="per_Nationality">
+                                                 <option value="TZ">Khomasdal</option>
+                                                 <option value="NAM">Katutura</option>
+                                             </select>
+                                             </dd>                                             
+                                             <dt><label for="">Physical Address</label></dt>
+                                             <dd><input type="text" class="col_7" name="apl_regdocument_desc" /></dd>
+                                             <dt><label for="">Postal Address</label></dt>
+                                             <dd><input type="text" class="col_7" name="apl_cert_desc" /></dd>                                           
+                                             <dd>
+                                             <table>
+                                                 <thead>
+                                                 </thead>
+                                                 <tbody>
+                                                     <tr>
+                                                         <td><label class="col" for="">Teleplone</label></td>
+                                                         <td><label class="col" for="">Mobile</label></td>
+                                                         <td><label class="col" for="">Fax</label></td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td><input type="text" class="col_12" name="apl_resoboard_desc" /></td>
+                                                         <td><input type="text" class="col_12" name="apl_resoboard_desc" /></td>
+                                                         <td><input type="text" class="col_12" name="apl_resoboard_desc" /></td>
+                                                     </tr>
+                                                 </tbody>
+                                                 <tfoot>
+
+                                                 </tfoot>
+                                             </table>
+                                         </dd>
+                                         </dl>
+                                         </fieldset>
+                            <hgroup>
+                                <button type="submit" class="col_ frm-btn green" id="cmd_save" name="cmd_save">Update My Account <i class="icon-angle-right"></i></button>
+                            </hgroup>
+                                     </form>
+
+                                 </div>
+                                 <?php ?>
+                             </section> 
+                                 </div>
+                                 <?php ?>
+                             </section> 
+                        
+                        <?php //echo $this->form; ?>
+                        
+                    </div>
+                    <?php ?>
+		</section>
+</section>

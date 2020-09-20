@@ -1,0 +1,42 @@
+<?php if ( 0 == count($this->contribution)): ?>
+<tr id="row_1">
+    <td class="year"><?php echo $this->formSelect('year[]' , null ,['class'=>'form-control' , 'multiple' => FALSE , 'id' => 'A1'] , $this->years); ?></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="B1" name="january[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="C1" name="february[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="D1" name="march[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="E1" name="april[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="F1" name="may[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="G1" name="june[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="H1" name="july[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="I1" name="august[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="J1" name="september[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="K1" name="october[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="L1" name="november[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="M1" name="december[]" class="form-control"></td>
+    <td><input type="text" readonly="readonly" value="" id="N1" name="total[]" class="form-control total" data-format="$ 0,0[.]00" data-formula="SUM($B1,$M1)"></td>
+    <td><button onclick="javascript:void(0)" type="button" title="" data-toggle="tooltip" data-widget="remove" class="btn btn-default btn-sm" data-original-title="Remove"><i class="fa fa-times"></i></button></td>
+</tr>
+<?php else:?>
+            <?php for ($i = 0 ; $i < count($this->contribution) ; $i++): ?>
+                    <tr id="row_<?php echo $this->escape($this->contribution[$i]['id']) ?>">
+                        <td class="year">
+                            <input type="hidden" value="<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="id[]" />
+                            <?php echo $this->formSelect('year[]' , $this->escape($this->contribution[$i]['year']) ,['class'=>'form-control' , 'multiple' => FALSE] , $this->years); ?>
+                        </td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['january']) ?>" id="B<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="january[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['february']) ?>" id="C<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="february[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['march']) ?>" id="D<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="march[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['april']) ?>" id="E<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="april[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['may']) ?>" id="F<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="may[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['june']) ?>" id="G<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="june[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['july']) ?>" id="H<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="july[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['august']) ?>" id="I<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="august[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['september']) ?>" id="J<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="september[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['october']) ?>" id="K<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="october[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['november']) ?>" id="L<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="november[]" class="form-control"></td>
+                        <td><input type="text" data-format="$ 0,0[.]00" value="<?php echo $this->escape($this->contribution[$i]['december']) ?>" id="M<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="december[]" class="form-control"></td>
+                        <td><input type="text" readonly="readonly" value="<?php echo $this->escape($this->contribution[$i]['total']) ?>" id="N<?php echo $this->escape($this->contribution[$i]['id']) ?>" name="total[]" class="form-control total" data-format="$ 0,0[.]00" data-formula="SUM($B<?php echo $this->escape($this->contribution[$i]['id']) ?>,$M<?php echo $this->escape($this->contribution[$i]['id']) ?>)"></td>
+                        <td><a href="javascript:void(0)" onclick="removeContribution(<?php echo $this->escape($this->contribution[$i]['id']) ?>)"><button type="button" title="" data-toggle="tooltip" data-widget="remove" class="btn btn-default btn-sm" data-original-title="Remove"><i class="fa fa-times"></i></button></a></td>
+                    </tr>
+            <?php endfor; ?>
+<?php endif; ?>

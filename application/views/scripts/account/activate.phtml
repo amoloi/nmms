@@ -1,0 +1,91 @@
+<?php echo $this->partial('/partials/_title.phtml',array('title'=>$this->title)) ?>  		
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages(),
+                                                                   'errors'=>$this->errors,)) ?>                        
+    </p>
+    <?php if(count($this->errors) > 0): ?>
+    <section>
+
+                    <div> 
+                        <table width="35%" align="center" style="border:10px solid #00ccff; padding:40px;">
+                            <tbody>
+                                <tr style="background: none;">
+                                    <td align="center" style="font-family:Arial, Helvetica, sans-serif; color:#666666;text-align: center; font-size:20px;font-weight:bold;">
+                                    Error Activating your Account!
+                                    </td>
+                                </tr>
+                                <tr style="background: none;">
+                                    <td height="7"></td>
+                                </tr>
+                                <tr style="background: none;">
+                                    <td align="center" style="font-family:Arial, Helvetica, sans-serif;text-align: left; color:#666666; font-size:14px;">                                   
+                                        <p>Thank you very much for trying to activate your new ECB-CLEMS account.</p>
+                                        <p>&nbsp;</p>
+                                        <p>We have,however,experienced problems activating your account using the following e-mail address</p>
+                                        <p>E-mail : <strong><?php echo $this->escape($this->email) ?></strong></p>
+                                        <p>&nbsp;</p>
+                                        <p>Please, double-check the account activation e-mail you received , make sure the e-mail is correct and try again to activate using the activation link provided there.</p>
+                                        <p>&nbsp;</p>
+                                        <p><strong>Thank you for your interest in ECB and its Services!</strong></p>
+                                        <p>&nbsp;</p>                                    
+                                    </td>
+
+                                </tr>
+                                <tr style="background: none;">
+                                    <td align="center" style="font-family:Arial, Helvetica, sans-serif;text-align: left; color:#666666; font-size:14px;">
+
+                                        <p>The ECB-CLEMS team</p>
+                                        <p>&nbsp;</p>                                    
+                                    </td>
+
+                                </tr>                                
+                            </tbody>
+                        </table>
+                        
+                    </div>
+		</section>    
+    <?php else: ?>
+                <section>
+
+                    <div> 
+                        <table width="35%" align="center" style="border:10px solid #00ccff; padding:40px;">
+                            <tbody>
+                                <tr style="background: none;">
+                                    <td align="center" style="font-family:Arial, Helvetica, sans-serif; color:#666666;text-align: center; font-size:20px;font-weight:bold;">
+                                        Thank You!
+                                    </td>
+                                </tr>
+                                <tr style="background: none;">
+                                    <td height="7"></td>
+                                </tr>
+                                <tr style="background: none;">
+                                    <td align="center" style="font-family:Arial, Helvetica, sans-serif;text-align: left; color:#666666; font-size:14px;">                                   
+                                        <p>Thank you very much for activating your new ECB-CLEMS account.</p>
+                                        <p>&nbsp;</p>
+                                        <p>You can now use your username and password to login into our system, once you are logged in successfully you will have access to and use all our online services</p>
+                                        <p>&nbsp;</p> 
+                                        <p><strong>Thank you for your interest in ECB and its Services!</strong></p>
+                                        <p>&nbsp;</p>                                    
+                                    </td>
+
+                                </tr>
+                                <tr style="background: none;">
+                                    <td align="center" style="font-family:Arial, Helvetica, sans-serif;text-align: left; color:#666666; font-size:14px;">
+
+                                        <p>The ECB-CLEMS team</p>
+                                        <p>&nbsp;</p>                                    
+                                    </td>
+
+                                </tr>                                
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <?php ?>
+		</section>
+<?php endif;?>
+<?php  ?>
+<?php ?>
+    		
+</section>

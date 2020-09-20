@@ -1,0 +1,76 @@
+<section class="row">
+    <article class="col-md-4">
+        <section class="panel panel-info">
+            <header class="panel-heading">
+                <h5><i class="fa fa-group"></i> Total members</h5>
+            </header>
+            
+            <div class="panel-body">
+                <p class="text-center"><span class="badge"><?php echo $this->escape($this->TotalMembers['total_member']) ?></span></p>
+                    <a href="" class=""><span class="glyphicon glyphicon-plus-sign"></span> New member</a>                
+            </div>
+        </section> 
+    </article>
+    <article class="col-md-4">
+        <section class="panel panel-default">
+            <header class="panel-heading">
+                <h5><i class="fa fa-male"></i><i class="fa fa-female"></i> Members by gender</h5>
+            </header>
+            
+            <div class="panel-body">
+                <ul class="list-inline text-center">
+                    <li class="col-md-6"><i class="fa fa-male"></i> Male <p><span class="badge"><?php echo $this->escape($this->TotalMale['total_member']) ?></span></p></li>
+                    <li class="col-md-6"><i class="fa fa-female"></i> Female <p><span class="badge"><?php echo $this->escape($this->TotalFemale['total_member']) ?></span></p></li>
+                </ul> 
+            </div>
+        </section> 
+    </article>    
+    <article class="col-md-4 last">
+        <section class="panel panel-default">
+            <header class="panel-heading">
+                <h5><i class="fa fa-building-o"></i> Total companies</h5><a href="">
+            </header>
+            
+            <div class="panel-body">
+                <p class="text-center"><span class="badge"><?php echo $this->escape($this->TotalCompany['total_member']) ?></span></p>
+                <span class="glyphicon glyphicon-plus-sign"></span> New company</a>
+            </div>
+        </section>             
+    </article>    
+</section>
+<section class="row">
+    <article class="col-md-12">
+        <section class="panel panel-default">
+            <header class="panel-heading">
+                <h5>Members by working state</h5>
+            </header>            
+            <div class="panel-body">
+                <ul class="list-inline text-center">
+                    <li class="col-md-2">Active<p><?php echo $this->escape($this->TotalActive['total_member']) ?></p></li>
+                    <li class="col-md-2">Retired<p class="text-center"><span class="badge"><?php echo $this->escape($this->TotalRetired['total_member']) ?></span></p></li>
+                    <li class="col-md-2">Resigned<p><span class="badge"><?php echo $this->escape($this->TotalActive['total_member']) ?></span> </p></li>
+                    <li class="col-md-2">Dismissed<p><span class="badge"><?php echo $this->escape($this->TotalDismiss['total_member']) ?></span> </p></li>
+                    <li class="col-md-2">Deceased<p><span class="badge danger"><?php echo $this->escape($this->TotalActive['total_member']) ?></span> </p></li>
+                    <li class="col-md-2">Retrenched<p><span class="badge"><?php echo $this->escape($this->TotalRetrenched['total_member']) ?></span> </p></li>
+                </ul>
+            </div>
+        </section>             
+    </article>
+</section>    
+<section class="row">
+    <article class="col-md-12 last">
+        <section class="panel panel-success">
+            <header class="panel-heading">
+                <h5>Total Revenue</h5>
+            </header>
+            
+            <div class="panel-body">
+                <p><h4><span class="badge success">N$<?php echo $this->escape($this->TotalRevenue['total_revenue']) ?></span></h4> </p>
+                
+            </div>
+        </section>             
+    </article>
+    <article class="col-md-6 last">
+            
+    </article>           
+</section>

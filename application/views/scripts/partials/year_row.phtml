@@ -1,0 +1,16 @@
+<tr id="row_<?php echo $this->rowId ?>">
+    <td class="year"><?php echo $this->formSelect('year[]' , null ,['class'=>'form-control' , 'multiple' => FALSE , 'id' => 'A1'] , $this->years); ?></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="B<?php echo $this->rowId ?>" name="january[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="C<?php echo $this->rowId ?>" name="february[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="D<?php echo $this->rowId ?>" name="march[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="E<?php echo $this->rowId ?>" name="april[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="F<?php echo $this->rowId ?>" name="may[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="G<?php echo $this->rowId ?>" name="june[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="H<?php echo $this->rowId ?>" name="july[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="I<?php echo $this->rowId ?>" name="august[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="J<?php echo $this->rowId ?>" name="september[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="K<?php echo $this->rowId ?>" name="october[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="L<?php echo $this->rowId ?>" name="november[]" class="form-control"></td>
+    <td><input type="text" value="" data-format="$ 0,0[.]00" id="M<?php echo $this->rowId ?>" name="december[]" class="form-control"></td>
+    <td><input type="text" readonly="readonly" value="" id="N<?php echo $this->rowId ?>" name="total[]" class="form-control total" data-format="$ 0,0[.]00" id="P2" data-formula="SUM($B<?php echo $this->rowId ?>,$M<?php echo $this->rowId ?>)" ></td>
+    <td><a href="javascript:void(0)" onclick="removeContribution(<?php echo $this->escape($this->rowId) ?>)"><button type="button" title="" data-toggle="tooltip" data-widget="remove" class="btn btn-default btn-sm" data-original-title="Remove"><i class="fa fa-times"></i></button></a></td>

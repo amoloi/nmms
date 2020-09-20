@@ -1,0 +1,74 @@
+<?php echo $this->partial('/partials/_title.phtml',array('title'=>$this->title)) ?>
+
+  		
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+                    <?php ?>
+			<table>
+			<thead>
+                            <tr>
+                                <td class="right" colspan="6">
+                                    <ul class="button-bar">
+                                            <li class="first"><a href=""><i class="icon-search"></i>Search</a></li>
+                                            <li class=""><a href="<?php echo $this->escape($this->url(array('controller'=>'users','action'=>'create','module'=>'') , null , true)) ?>"><i class="icon-file"></i>New User</a></li>
+                                            <li class="last"><a href="#"><i class="icon-print"></i>Print</a></li>  
+                                    </ul>
+                                </td>
+                            </tr>                            
+				<tr>
+					<th>Firstname</th><th>Lastname</th><th>Username</th><th>Role</th><th>Last Loggedin</th><td></td>
+				</tr>
+			</thead>
+			<tbody>
+                            <?php foreach ($this->paginator as $key => $value): ?>
+                            
+				<tr>
+					<td><?php echo $this->escape($value['usr_firstname']) ?></td>
+                                        <td><?php echo $this->escape($value['usr_lastname']) ?></td>
+                                        <td><?php echo $this->escape($value['usr_username']) ?></td>
+                                        <td><?php echo $this->escape($value['usr_role']) ?></td>
+                                        <td><?php echo $this->escape($value['usr_last_login']) ?></td>
+					
+					<td class="actions">
+						<ul class="button-bar">
+							<li class="first"><a href="<?php echo $this->escape($this->url(array('controller'=>'users','action'=>'edit','module'=>'','id'=>$this->escape($value['usr_id'])))) ?>" class=""><i class="icon-pencil"></i></a></li>
+							<li><a href="<?php echo $this->escape($this->url(array('controller'=>'users','action'=>'delete','module'=>'','id'=>$this->escape($value['usr_id'])))) ?>"><i class="icon-minus-sign"></i></a></li>
+							<li><a href="<?php echo $this->escape($this->url(array('controller'=>'users','action'=>'status','module'=>'','id'=>$this->escape($value['usr_id'])))) ?>"><i class="icon-trash"></i></a></li>
+							<li class="last"><a href="<?php echo $this->escape($this->url(array('controller'=>'users','action'=>'edit','module'=>'','id'=>$this->escape($value['usr_id'])))) ?>"><i class="icon-wrench"></i></a></li>
+						</ul>
+					</td>
+					
+				</tr>
+                            
+                            <?php   endforeach; ?>
+			</tbody>
+			<tfoot>
+                            <tr>
+                                <td colspan="6">
+                                        <section class="pagi">
+
+                                        <?php
+                                        echo hash('sha256' , 'innocent');
+                                        /*
+                                        * Print the pagination of type , drop down or search type or of your choice.
+                                        */
+                                        echo $this->paginationControl($this->paginator ,'Sliding' ,'/partials/pagination.phtml'); ?>
+
+                                        </section>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="right" colspan="6">
+                                    <ul class="button-bar">
+                                            <li class=""><a href="<?php echo $this->escape($this->url(array('controller'=>'users','action'=>'create','module'=>'') , null , true)) ?>"><i class="icon-file"></i>New User</a></li>
+                                            <li class="last"><a href="#"><i class="icon-print"></i>Print</a></li>  
+                                    </ul>
+                                </td>
+                            </tr>  
+                        </tfoot>
+			</table>
+		</section>
+</section>

@@ -1,0 +1,59 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+
+                    <div> 
+ 		<section>
+                    <div>
+                        <div>
+                            <em>
+                                In terms of regulation 3(2)(d) of the Electricity Regulations: Administrative, the following information is required:
+                            </em>
+                        </div>
+                        <?php //echo $this->form; ?>
+                        <form method="post" action="/transmissionlicense/sectionc" enctype="multipart/form-data" name="frmECB">
+                                        <fieldset>
+                                            <legend>Location Details</legend>
+                                                    <dl class="zend_form">
+                                                        <dt id="per_firstName-label"><label class="required" for="per_firstName"><span>(i)</span> Map showing the proposed location where the applicant intends to erect or alter plant, where applicable;</label></dt>
+                                                    <dd id="per_firstName-element">
+                                                    <input type="file" class="col_7 column" value="Upload Map here" id="per_firstName" name="per_firstName"></dd>
+                                                    <dt id="per_lastName-label"><label class="required" for="per_lastName"><span>(ii)</span>  A description of the technical design, including a one-line diagram of the proposed plant, and its surrounding electrical system, which the applicant intents to erect or alter, where applicable;</label></dt>
+                                                    <dd id="per_lastName-element">
+                                                    <input type="file" class="col_7 column" value="" id="per_lastName" name="per_lastName"></dd>
+                                                    <dt id="per_registrationNo-label"><label class="required" for="per_registrationNo"><span>(iii)</span> A description, including a site layout, of the area within which the applicant intends to carry out the activities to be authorised under the licence;</label></dt>
+                                                    <dd id="per_registrationNo-element">
+                                                    <input type="file" class="col_7 column" value="" id="per_registrationNo" name="per_registrationNo"></dd>
+                                                    <dt id="per_Country-label"><label class="required" for="per_Country"><span>(iv)</span> A calculation of the net present value of the proposed plant and any alternative plants, which calculation must be in accordance with the guidelines determined by the Board. </label></dt>
+                                                    <dd id="per_Country-element">
+                                                    <input type="file" class="col_7 column" value="" id="per_registrationNo" name="per_registrationNo"></dd></dd>
+                                                    <dt><label for=""><span>(v)</span> Provide a site map coordinates,separated by a coma "," for each coordinate entry. </label></dt>
+                                             <dd><input type="text" class="col_12" name="apl_cert_desc" /></dd>
+                                                    </dl>                              
+                                        </fieldset>
+                                        <fieldset>
+                                             <legend>Additional requirements are:</legend>
+                                         <dl>
+                                             <dt><label for=""><span>(i)</span> Submit a map to readily identify the area to which the application relates. The map must be to scale 1:250000 where boundaries follow existing boundaries. Where boundaries do not follow existing boundaries the map should be to the scale 1:50000.
+                                                 (Map must indicate local government boundaries within the area to which the application relates. )</label></dt>
+                                             <dd><input type="file" class="col_7" name="apl_regdocument_desc" /></dd>
+                                             <dt><label for=""><span>(ii)</span> Provide a one-line diagram covering the transmission network</label></dt>
+                                             <dd><input type="file" class="col_7" name="apl_cert_desc" /></dd>
+                                             <dt id="cmd_save-label"><hr></dt>
+                                             <dd id="cmd_save-element">
+                                                 <input type="submit" class="col_4 column green" value="Continue" id="cmd_save" name="cmd_save">
+                                             </dd></dl>
+                                         </fieldset>
+                                     </form>
+                                 </div>
+                                 <?php ?>
+                             </section> 
+                        
+                        <?php //echo $this->form; ?>
+                        
+                    </div>
+                    <?php ?>
+		</section>
+</section>

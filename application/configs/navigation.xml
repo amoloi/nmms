@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <config>
+       <nav>
+          <mainnav>
+             <label>Home</label>
+             <uri></uri>
+             <class>menu</class>
+             <pages>
+                 
+                <home>
+                   <label>Overview</label>
+                   <controller>index</controller>
+                   <action>index</action>
+                </home>
+                <members>
+                   <label>Members</label>
+                   <controller>members</controller>
+                   <action>index</action>
+                   <pages>
+                        <members-finance>
+                            <label>Finance</label>
+                            <controller>members</controller>
+                            <action>finance</action>
+                         </members-finance>
+                        <members-new>
+                            <label>New Member</label>
+                            <controller>members</controller>
+                            <action>new</action>
+                         </members-new>
+                        <members-edit>
+                            <label>Editing Member</label>
+                            <controller>members</controller>
+                            <action>edit</action>
+                         </members-edit>                                                   
+                   </pages>
+                </members>
+                <companies>
+                   <label>Companies</label>
+                   <controller>companies</controller>
+                   <action>index</action>
+                   <pages>
+                        <companies-finance>
+                            <label>Finance</label>
+                            <controller>companies</controller>
+                            <action>finance</action>
+                         </companies-finance>
+                        <companies-new>
+                            <label>New Company</label>
+                            <controller>companies</controller>
+                            <action>new</action>
+                         </companies-new>
+                        <companies-edit>
+                            <label>Editing Company</label>
+                            <controller>companies</controller>
+                            <action>edit</action>
+                         </companies-edit>                                                   
+                   </pages>                   
+                </companies>
+                <departments>
+                   <label>Departments</label>
+                   <controller>departments</controller>
+                   <action>index</action>
+                </departments>                
+
+                <reports>
+                   <label>Reports</label>
+                   <controller>reports</controller>
+                   <action>index</action>
+                </reports>
+                <member-termination>
+                   <label>Member Termination</label>
+                   <controller>members</controller>
+                   <action>termination</action>
+                </member-termination>                                              
+             </pages>
+          </mainnav>
+
+          <admin>
+             <label>Admin Navigation</label>
+             <uri></uri>
+             <pages>
+                <showuser>
+                   <label>show user</label>
+                   <module>admin</module>
+                   <controller>index</controller>
+                   <action>index</action>
+                </showuser>
+                <adduser>
+                   <label>add user</label>
+                   <module>admin</module>
+                   <controller>index</controller>
+                   <action>adduser</action>
+                </adduser>
+             </pages>
+          </admin>
+       </nav>
+    </config>

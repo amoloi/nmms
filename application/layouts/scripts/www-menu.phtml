@@ -1,0 +1,35 @@
+<?php ?>
+	<aside class="col_3">
+        	<article>
+			<header class="tooltip" title="Click to Expand/Collapse"><h6><i class="icon-user"></i>NMMS - Administration</h6></header>
+			<section class="menu-container">
+			<ul class="alt">
+                              <li><?php echo $this->loggedInUser();  ?></li>
+
+			</ul>
+			</section>
+		</article>
+		<article>
+			<header class="tooltip" title="Click to Expand/Collapse">
+                            <h6><i class="icon-tasks"></i>Quick Links</h6>
+                        </header>
+			<section class="menu-container">
+                            <ul class="alt">
+                                    <li>
+                                        <a class="submenuheader <?php ?>" href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'new','module'=>'') , null , true)) ?>">Add a New Member</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo $this->escape($this->url(array('controller'=>'companies','action'=>'new','module'=>'') , null , true)) ?>">Add a New Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo $this->escape($this->url(array('controller'=>'departments','action'=>'new','module'=>'') , null , true)) ?>">Add a New Department</a>                              
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'termination','module'=>'') , null , true)) ?>">Membership Termination</a>                               
+                                    </li>
+                            </ul>
+			</section>
+		</article>
+		<article>
+		</article>
+	</aside>

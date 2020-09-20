@@ -1,0 +1,92 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+
+                    <div> 
+ 		<section>
+                    <div>
+                        <?php //echo $this->form; ?>
+                        <form method="post" action="/members/testing" enctype="multipart/form-data" name="frmECB">
+                                        <fieldset>
+                                            <legend>Member`s Details</legend>
+                                                    <div class="form-group col-lg-5">
+                                                         <label class="col" for="company_name">Member`s Name</label>
+                                                         <input type="text" class="form-control" disabled="disabled" name="member_name" value="<?php echo $this->escape($this->MemberDetails['member_name'] . ' ' . $this->MemberDetails['initials'] . ' ' . $this->MemberDetails['member_surname']); ?>" />                                                       
+                                                    </div>
+                                                    <div class="form-group col-lg-5">
+                                                         <label class="col" for="company_name">Member`s Name</label>
+                                                         <input type="text" disabled="disabled" class="form-control" name="member_name" value="<?php echo $this->escape($this->MemberDetails['member_name'] . ' ' . $this->MemberDetails['initials'] . ' ' . $this->MemberDetails['member_surname']); ?>" />                                                      
+                                                    </div>                                                                           
+                                        </fieldset>
+<fieldset>
+    <legend>Member`s monthly contribution details:</legend>
+    <table id="member_contribution">
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Jan</th>
+                <th>Feb</th>
+                <th>Mar</th>
+                <th>Apr</th>
+                <th>May</th>
+                <th>Jun</th>
+                <th>Jul</th>
+                <th>Aug</th>
+                <th>Sep</th>
+                <th>Oct</th>
+                <th>Nov</th>
+                <th>Dec</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" value="" id="year" name="year[]" class="form-control"></td>
+                <td><input type="text" value="" id="january" name="january[]" class="form-control"></td>
+                <td><input type="text" value="" id="february" name="february[]" class="form-control"></td>
+                <td><input type="text" value="" id="march" name="march[]" class="form-control"></td>
+                <td><input type="text" value="" id="april" name="april[]" class="form-control"></td>
+                <td><input type="text" value="" id="may" name="may[]" class="form-control"></td>
+                <td><input type="text" value="" id="june" name="june[]" class="form-control"></td>
+                <td><input type="text" value="" id="july" name="july[]" class="form-control"></td>
+                <td><input type="text" value="" id="august" name="august[]" class="form-control"></td>
+                <td><input type="text" value="" id="septemper" name="september[]" class="form-control"></td>
+                <td><input type="text" value="" id="october" name="october[]" class="form-control"></td>
+                <td><input type="text" value="" id="november" name="november[]" class="form-control"></td>
+                <td><input type="text" value="" id="december" name="december[]" class="form-control"></td>
+                <td><input type="text" value="" id="total" name="total[]" class="form-control"></td>
+                <td><a href="#">Del</a></td>
+            </tr>            
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><button name="cmd_new_row" id="cmd_new_row" class="btn btn-default" type="button"><i class="fa fa-plus"></i> Add Member`s Finance row</button></td>
+                <td colspan="2" id="progress_indicator"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="3" class="text-right">Total contribution:</td>
+                <td><input type="text" value="" id="grosstotal" name="grosstotal" class="form-control"></td>
+            </tr>            
+        </tfoot>
+    </table>                                                                                                                                                                                                      
+</fieldset>
+                             <hgroup>
+                                <button name="cmd_save" id="cmd_save" class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Update Member`s Finance</button>
+                            </hgroup>                           
+                                     </form>
+                                 </div>
+                                 <?php ?>
+                             </section> 
+                        
+                        <?php //echo $this->form; ?>
+                        
+                    </div>
+                    <?php ?>
+		</section>
+</section>

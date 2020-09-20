@@ -1,0 +1,9 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+   <?php echo $this->partial('/partials/memberForm.phtml',array('FormData'=>array(),
+                                                                'sectors'=>$this->sectors,
+                                                                'companies'=>$this->companies,
+                                                                'action' => 'new')) ?>  
+</section>

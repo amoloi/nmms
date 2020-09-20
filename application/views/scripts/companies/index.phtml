@@ -1,0 +1,61 @@
+<article class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+<div class="row search-row">
+  <div class="col-lg-6">
+      <form action="<?php echo $this->escape($this->url(array('controller'=>'search','action'=>'company','module'=>'') , null , true)) ?>" name="searchForm" method="post">
+        <div class="input-group input-group-sm">
+            <input placeholder="Search" type="text" name="q" value="<?php echo $this->escape($this->q); ?>" class="form-control">
+          <span class="input-group-btn">
+              <button class="btn btn-default" type="submit"> <i class="fa fa-search"></i> </button>
+          </span>
+        </div><!-- /input-group -->          
+      </form>
+
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row --> 
+		</section>
+    		<section>
+<table class="table table-striped table-hover">
+    <caption>
+    </caption>
+        <thead>
+            <tr><td colspan="4" class="text-right">                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('controller'=>'companies','action'=>'new','module'=>'') , null , true)) ?>">
+                                    Create a new company <i class="fa fa-arrow-circle-right"></i>
+                                </a></td></tr>            
+            <tr class="alt first last">
+                    <th rel="1" value="Document Name">Company`s Name</th>
+                    <th rel="2" value="Document Type">Telephone</th>
+                    <th rel="2" value="Document Type">Fax</th>
+                    <th rel="3" value="Actions">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($this->paginator as $key => $value):?>
+                    <tr class="first last">
+                          <td value="<?php echo $this->escape($value['company_name']); ?>"><?php echo $this->escape($value['company_name']); ?></td>
+                          <td value="<?php echo $this->escape($value['telephone_number']); ?>"><?php echo $this->escape($value['telephone_number']); ?></td>
+                          <td value="<?php echo $this->escape($value['fax_number']); ?>"><?php echo $this->escape($value['fax_number']); ?></td>
+                          <td class="actions text-right" value="Download Open">
+                              <a href="<?php echo $this->escape($this->url(array('controller'=>'companies','action'=>'finance','module'=>'','id'=>$this->escape($value['id'])) , null , true)) ?>"><i class="fa fa-money"></i> Finance</a> &VerticalSeparator;
+                              <a href="<?php echo $this->escape($this->url(array('controller'=>'companies','action'=>'edit','module'=>'','id'=>$this->escape($value['id'])) , null , true)) ?>"><i class="fa fa-edit"></i> Edit </a> &VerticalSeparator;
+                              <a class="red" href="<?php echo $this->escape($this->url(array('controller'=>'companies','action'=>'terminate','module'=>'','id'=>$this->escape($value['id'])) , null , true)) ?>"  onclick="return terminate('The chosen company will be permanently removed from your system, are you sure?');"><i class="fa fa-eraser"></i> Terminate</a>
+                          </td>
+                      </tr>                
+            <?php endforeach; ?>           
+        </tbody>
+        <tfoot>
+            <tr><td colspan="4" class="text-right">                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('controller'=>'companies','action'=>'new','module'=>'') , null , true)) ?>">
+                                    Create a new company <i class="fa fa-arrow-circle-right"></i>
+                                </a></td></tr>            
+            <tr>
+                <td colspan="4">
+                    <?php echo $this->paginationControl($this->paginator, 'Elastic', '/partials/pagination.phtml'); ?>
+                </td>
+            </tr>
+        </tfoot>        
+</table>
+		</section>    
+</article>

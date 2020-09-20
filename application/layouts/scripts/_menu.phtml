@@ -1,0 +1,47 @@
+<?php ?>
+	<aside class="col_3">
+		<article>
+			<header class="tooltip" title="Click to Expand/Collapse"><h6><i class="icon-edit"></i>Contents</h6></header>
+			<section class="menu-container">
+			<ul class="alt">
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'contents','action'=>'index','module'=>'') , null , true)) ?>">New Contents</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'contents','action'=>'templates','module'=>'') , null , true)) ?>">Templates</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'namereservation','action'=>'index','module'=>'') , null , true)) ?>">Licenses</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'namereservation','action'=>'index','module'=>'') , null , true)) ?>">Enegry</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'references','action'=>'index','module'=>'') , null , true)) ?>">References</a></li>
+			</ul>
+			</section>
+		</article>
+		<article>
+			<header class="tooltip" title="Click to Expand/Collapse"><h6><i class="icon-user"></i>Users</h6></header>
+			<section class="menu-container">
+			<ul class="alt">
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'users','action'=>'create','module'=>'') , null , true)) ?>">Add New</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'users','action'=>'','module'=>'') , null , true)) ?>">All Users</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'users','action'=>'profile','module'=>'') , null , true)) ?>">My Profile</a></li>
+			</ul>
+			</section>
+		</article>
+		<article>
+			<header class="tooltip" title="Click to Expand/Collapse"><h6><i class="icon-cogs"></i>Admin Settings</h6></header>
+			<section class="menu-container">
+			<ul class="alt">
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'namereservation','action'=>'index','module'=>'') , null , true)) ?>">Options</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'namereservation','action'=>'index','module'=>'') , null , true)) ?>">E-mail</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'namereservation','action'=>'index','module'=>'') , null , true)) ?>">Database</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'namereservation','action'=>'index','module'=>'') , null , true)) ?>">Database</a></li>
+			</ul>
+			</section>
+		</article>
+		<article>
+			<header class="tooltip" title="Click to Expand/Collapse"><h6><i class="icon-envelope"></i>Notifications</h6></header>
+			<section class="menu-container">
+			<ul class="alt">
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'namereservation','action'=>'index','module'=>'') , null , true)) ?>">Expired Licenses</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'namereservation','action'=>'index','module'=>'') , null , true)) ?>">Due Renewals</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'namereservation','action'=>'index','module'=>'') , null , true)) ?>">Other Notifications</a></li>
+				<li><a href="<?php echo $this->escape($this->url(array('controller'=>'namereservation','action'=>'index','module'=>'') , null , true)) ?>">Other Notifications</a></li>
+			</ul>
+			</section>
+		</article>
+	</aside>

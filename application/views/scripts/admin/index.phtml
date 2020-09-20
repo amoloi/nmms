@@ -1,0 +1,60 @@
+<?php echo $this->partial('/partials/_title.phtml',array('title'=>$this->title)) ?>  		
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    <article class="col_4 first">
+        
+    </article>
+    		<article class="col_4">
+
+                    <div> 
+ 		<section>
+                    <div>
+                        <div>
+                            <em>
+                                (Please provide your username/password below to login)
+                            </em>
+                        </div>
+                        <?php //echo $this->form; ?>
+    		<section>
+                    <div>
+                        <?php //echo $this->form; ?>
+                        <form method="post" action="/auth/login/" enctype="multipart/form-data" name="frmECB">
+                                        <fieldset>
+                                           
+
+                                             <dl class="zend_form">
+                                             <dd id="per_personType-element"></dd>
+                                             <dt id="per_firstName-label"><label class="required" for="per_firstName">
+                                                 Username
+                                             </label></dt>
+                                             <dd id="per_firstName-element">
+                                             <input type="text" class="col_12 column" value="" id="per_firstName" name="per_firstName"></dd>
+                                             <dt id="per_Nationality-label"><label class="required" for="per_Nationality">Password</label></dt>
+                                             <dd id="per_firstName-element">
+                                             <input type="password" class="col_12 " value="" id="" name="per_firstName"></dd>
+                                             
+                                             <dl class="zend_form">
+                                                 <dt id="cmd_save-label"><em>Forgotten Password</em></dt>
+                                             <dt id="cmd_save-label"><hr></dt>
+                                             <dd id="cmd_save-element">
+                                                 <input type="submit" class="column green" value="Login" id="cmd_save" name="cmd_save">
+                                             </dd>                                             
+                                             </dl>
+                                             
+                                        </fieldset>
+                                     </form>
+
+                                 </div>
+                                 <?php ?>   
+                             </section> 
+                        
+                        <?php //echo $this->form; ?>
+                        
+                    </div>
+                    <?php ?>
+		</section>
+                </article>
+    <article class="col_4 last"></article>
+</section>

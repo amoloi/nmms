@@ -1,0 +1,67 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+                    <div>
+    		<section>
+                    <div>
+                        <?php //echo $this->form; ?>
+                        <form method="post" action="/companies/new/" enctype="multipart/form-data" name="NatauForm">
+              <fieldset>
+                <header>
+                    <h3>Member Company`s Details</h3>
+                </header>                  
+                          <div class="row">
+                          <div class="form-group col-md-8">
+                                                         <label class="col" for="company_name">Company Name:</label>
+                                                         <input required="required" title="Company name is required" type="text" maxlength="128" class="form-control" id="company_name" name="company_name" />                                                                                                           
+                          </div>                                                       
+                          </div>
+                          <div class="row">
+                          <div class="form-group col-md-6">
+                                                         <label class="col" for="telephone_number">Telephone No:</label>
+                                                         <input required="required" title="Telephone number is required" maxlength="24" type="text" class="form-control" id="telephone_number" name="telephone_number" />                                                 
+                          </div>
+                          <div class="form-group col-md-6">
+                                                         <label class="col" for="fax_number">Fax No:</label>
+                                                         <input required="required" title="Fax number is required" maxlength="24" type="text" id="fax_number" class="form-control" name="fax_number" />                                                  
+                          </div>                              
+                          </div>
+                          <div class="row">
+                          <div class="form-group col-md-6">
+                                                         <label class="col" for="contact_person">Contact Person:</label>
+                                                         <input required="required" title="Contact person is required" maxlength="128" type="text" class="form-control" id="contact_person" name="contact_person" />                                                                                                          
+                          </div>
+                          <div class="form-group col-md-6">
+                                                         <label class="col" for="email_address">E-mail Address:</label>
+                                                         <input required="required" title="Email address is required" maxlength="128" type="text" class="form-control" id="email_address" name="email_address" />                                                                                                          
+                          </div>                              
+                          </div> 
+                          <div class="row">
+                          <div class="form-group col-md-12">
+                                                         <label class="col" for="postal_address">Postal Address:</label>
+                                                         <input maxlength="128" required="required" title="Postal address is required" type="text" class="form-control column " value="" id="postal_address" name="postal_address"/>                                                                                                         
+                          </div>                                                       
+                          </div>                   
+              </fieldset>                            
+                                       
+                            <hgroup>
+                                <button name="cmd_save" id="cmd_save" class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Save company`s data</button>
+                                <button type="button" class="btn btn-default" id="cmd_cancel" name="cmd_cancel_dept"><i class="fa fa-chevron-left"></i> Cancel</button>
+                            </hgroup>
+                                     </form>
+
+                                 </div>
+                                 <?php ?>
+                             </section>                       
+
+                        <section>
+                        </section>
+                  
+
+                        
+                    </div>
+                    <?php ?>
+		</section>
+</section>

@@ -1,0 +1,83 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+                    <p>
+                        Please Provide Company`s details bellow
+                    </p>
+                    <div>
+                        <?php //echo $this->form; ?>
+
+                        
+    		<section>
+                    <div>
+                        <?php //echo $this->form; ?>
+                        <form method="post" action="/companies/edit/" enctype="multipart/form-data" name="NatauForm">
+                                        <fieldset>
+                                            <legend>Member Company`s Details</legend>
+                                             <table>
+                                                 <thead>
+                                                 </thead>
+                                                 <tbody>
+                                                     <tr>
+                                                         <td><label class="col" for="company_name">Company Name:</label></td>
+                                                         <td>
+                                                             <input type="hidden" value="<?php echo $this->escape($this->FormData['id']) ?>" name="id"/>
+                                                             <input type="text" maxlength="128" class="col_12" id="company_name" value="<?php echo $this->escape($this->FormData['company_name']) ?>" name="company_name" /></td>
+                                                         
+                                                     <td></td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td><label class="col" for="telephone_number">Telephone No:</label></td>
+                                                         <td><input maxlength="24" type="text" class="col_12" id="telephone_number" value="<?php echo $this->escape($this->FormData['telephone_number']) ?>" name="telephone_number" /></td>
+                                                     <td></td>
+                                                     </tr>                                                      
+                                                     <tr>
+                                                         <td><label class="col" for="fax_number">Fax No:</label></td>
+                                                         <td><input maxlength="24" type="text" id="fax_number" class="col_12" value="<?php echo $this->escape($this->FormData['fax_number']) ?>" name="fax_number" /></td>
+                                                     <td></td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td><label class="col" for="contact_person">Contact Person:</label></td>
+                                                         <td><input maxlength="128" type="text" class="col_12" id="contact_person" value="<?php echo $this->escape($this->FormData['telephone_number']) ?>" name="contact_person" /></td>
+                                                     <td></td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td><label class="col" for="email_address">E-mail Address:</label></td>
+                                                         <td><input maxlength="128" type="text" class="col_12" id="email_address" value="<?php echo $this->escape($this->FormData['email_address']) ?>" name="email_address" /></td>
+                                                     <td></td>
+                                                     </tr>                                                      
+                                                     
+                                                     <tr>
+                                                     </tr>
+                                                     <tr>
+                                                         <td><label class="col" for="postal_address">Postal Address:</label></td>
+                                                         <td><input maxlength="128" type="text" class="col_12" id="postal_address" value="<?php echo $this->escape($this->FormData['postal_address']) ?>" name="postal_address" /></td>
+                                                         <td></td>
+                                                     </tr>                                                  
+                                                 </tbody>
+                                                 <tfoot>
+
+                                                 </tfoot>
+                                             </table>                                                     
+                                        </fieldset>
+                                       
+                            <hgroup>
+                                <button name="cmd_save" id="cmd_save" class="col_3 frm-btn green column" type="submit"><i class="icon-save"></i> Update Company`s Data</button>
+                            </hgroup>
+                                     </form>
+
+                                 </div>
+                                 <?php ?>
+                             </section>                       
+
+                        <section>
+                        </section>
+                  
+
+                        
+                    </div>
+                    <?php ?>
+		</section>
+</section>

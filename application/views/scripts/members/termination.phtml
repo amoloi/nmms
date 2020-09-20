@@ -1,0 +1,39 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+                    <p>
+                        Please Provide the name of the member whose membership is to be terminated  bellow
+                    </p>
+                    <div>
+                        <?php //echo $this->form; ?>
+
+                        
+    		<section>
+                    <div>
+                        <?php //echo $this->form; ?>
+                        <form method="post" action="/members/new/" enctype="multipart/form-data" name="frmECB">
+                                        <fieldset>
+                                            <legend>Member`s termination details</legend>
+                                                <div class="row">
+                                                    <div class="form-group col-md-8">
+                                                                                   <label class="col" for="member_name">Member`s name</label>
+                                                                                   <input type="text" required="required" title="Member`s name is required." class="form-control" id="member_name" name="member_name" value="<?php echo $this->escape($this->FormData['member_name']) ?>" />                                                                                                          
+                                                    </div>                                                       
+                                                </div>                                                                                                 
+                                        </fieldset>
+                                        
+                            <hgroup>
+                                <button name="cmd_save" id="cmd_save" class="btn btn-primary" type="submit"><i class="icon-save"></i> Terminate Membership</button>
+                                <button type="button" class="btn btn-default" id="cmd_cancel" name="cmd_cancel_dept"><i class="fa fa-chevron-left"></i> Cancel</button>
+                            </hgroup>
+                                     </form>
+
+                                 </div>
+                                 <?php ?>
+                             </section>                       
+                    </div>
+                    <?php ?>
+		</section>
+</section>

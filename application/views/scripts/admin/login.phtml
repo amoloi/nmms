@@ -1,0 +1,39 @@
+<?php echo $this->partial('/partials/_title.phtml', array('title' => $this->title)) ?>  		
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml', array('flashMessages' => $this->flashMessages())) ?>                        
+    </p>
+    <article class="col_4 first">
+
+    </article>
+    <article class="col_4">
+
+        <div> 
+            <section>
+                <div>
+                    <div>
+                        <em>
+                            (Please provide your username/password below to login)
+                        </em>
+                    </div>
+                    <?php //echo $this->form; ?>
+                    <section>
+                        <div>
+                            <fieldset>
+
+
+                                <?php echo $this->form; ?>
+
+                            </fieldset>
+                        </div>
+                        <?php ?>   
+                    </section> 
+
+                    <?php //echo $this->form; ?>
+
+                </div>
+                <?php ?>
+            </section>
+    </article>
+    <article class="col_4 last"></article>
+</section>

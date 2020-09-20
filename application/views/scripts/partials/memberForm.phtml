@@ -1,0 +1,242 @@
+    		<section>
+                    <div>   
+    		<section>
+                    <div>
+                        <?php //echo $this->form; ?>
+                        <form method="post" action="/members/<?php echo $this->escape($this->action) ?>/" enctype="multipart/form-data" name="NatauForm">
+                            <input type="hidden" value="<?php echo $this->escape($this->FormData['id']) ?>" name="id"/>
+                                        <fieldset>
+                                            <legend>Member Application Details</legend>
+                                                    <div class="row">
+                                                    <div class="form-group col-lg-2">
+                                                         <label class="col" for="salary_code">Salary No</label>
+                                                         <input required="required" title="Salary number is required" type="text" class="form-control" id="salary_code" name="salary_code" value="<?php echo $this->escape($this->FormData['salary_code']) ?>" />                                                        
+                                                    </div>
+                                                    <div class="form-group col-lg-5">
+                                                         <label class="col" for="nid_no">ID/Passport No</label>
+                                                         <input required="required" maxlength="13" title="Passport/ID number is required" type="text" class="form-control" name="nid_no" value="<?php echo $this->escape($this->FormData['nid_no']) ?>" />                                                        
+                                                    </div>                                                        
+                                                </div>
+                                                    <div class="row">
+                                                    <div class="form-group col-md-2">
+                                                         <label class="col" for="initials">Initials</label>
+                                                         <input type="text" maxlength="4" class="form-control" id="initials" name="initials" value="<?php echo $this->escape($this->FormData['initials']) ?>" />                                                      
+                                                    </div>
+                                                    <div class="form-group col-md-5">
+                                                         <label class="col" for="member_name">First Name</label>
+                                                         <input required="required" maxlength="36" title="First name is required" type="text" class="form-control" name="member_name" value="<?php echo $this->escape($this->FormData['member_name']) ?>" />                                                       
+                                                    </div>
+                                                    <div class="form-group col-md-5">
+                                                         <label class="col" for="member_surname">Last Name</label>
+                                                         <input required="required" maxlength="36" title="Last name is required" type="text" class="form-control" name="member_surname" value="<?php echo $this->escape($this->FormData['member_surname']) ?>" />                                                       
+                                                    </div>                                                        
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class="form-group col-lg-3">
+                                                         <label class="col" for="date_of_birth">Date of Birth</label>
+                                                         <input type="text" data-date-format="dd/mm/yyyy" maxlength="12" class="form-control datepicker" id="date_of_birth" name="date_of_birth" value="<?php echo $this->escape($this->FormData['date_of_birth']) ?>"/>                                                        
+                                                    </div>
+                                                    <div class="form-group col-lg-3">
+                                                         <label class="" for="gender">Gender</label>
+                                                         <?php echo $this->formSelect('gender' , $this->FormData['gender'], array('class'=>'form-control') , array(
+                                                             'male' => 'Male',
+                                                             'female' => 'Female',
+                                                         )); ?>                                                     
+                                                    </div>
+                                                    <div class="form-group col-lg-3">
+                                                         <label class="" for="working_state">Working State</label>
+                                                         <?php echo $this->formSelect('working_state' , $this->FormData['working_state'], array('class'=>'form-control') , array(
+                                                             'active' => 'Active',
+                                                             'dismissed' => 'Dismissed',
+                                                             'lost' => 'Lost',
+                                                             'resigned' => 'Resigned',
+                                                             'retired' => 'Retired',
+                                                             'retrenched' => 'Retrenched',
+                                                             'deceased' => 'Deceased',
+                                                         )); ?>                                                         
+                                                    </div>
+                                                    <div class="form-group col-lg-3">
+                                                         <label class="" for="contact">Contact No</label>
+                                                         <input required="required" maxlength="20" title="Contact number is required" type="text" class="form-control col-md-6" name="contact" value="<?php echo $this->escape($this->FormData['contact']) ?>" />                                                        
+                                                    </div>                                                        
+                                                    </div>                                                    
+                                        </fieldset>
+                                         <fieldset>
+                                             <legend>Member Company Details</legend>
+                                                    <div class="row">
+                                                    <div class="form-group col-md-5">
+                                                         <label class="col" for="company_name">Company Name</label>
+                                                        
+                                                             <?php echo $this->formSelect('company_name' , $this->FormData['company_name'], array('class'=>'form-control','id'=>'company_name') , $this->companies);?>                                                   
+                                                    </div>
+                                                    <div class="form-group col-md-5 new-item">
+                                                                <button type="button" id="btn-new-member" class="btn btn-default" name="new_company_btn" /> New Company</button>                                                      
+                                                    </div>
+                                                    <div class="form-group col-md-2">                                                      
+                                                    </div>                                                         
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class="form-group col-md-5">
+                                                         <label class="col" for="sector">Department</label>
+                                                         <?php echo $this->formSelect('sector' , $this->FormData['sector'], array('class'=>'form-control','id'=>'sector') , $this->sectors);?>                                                 
+                                                    </div>
+                                                    <div class="form-group col-md-5 new-item">
+                                                         <button type="button" id="btn-new-dept" class="btn btn-default" name="sector" /> New Department</button>                                                     
+                                                    </div>
+                                                    <div class="form-group col-md-2">                                                      
+                                                    </div>                                                        
+                                                    </div>                                                      
+                                                    <div class="row">
+                                                    <div class="form-group col-md-7">
+                                                         <label class="col" for="work_description">Occupation</label>
+                                                         <input required="required" title="Occupation is required" type="text" class="form-control" name="work_description" value="<?php echo $this->escape($this->FormData['work_description']) ?>" />                                                 
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                         <label class="col" for="salary_or_wage">Salary / Wage</label>
+                                                         <input type="text" class="form-control" name="salary_or_wage" value="<?php echo $this->escape($this->FormData['salary_or_wage']) ?>" />                                                      
+                                                    </div>
+                                                    <div class="form-group col-md-3">
+                                                         <label class="col" for="office_date">Date of Employment</label>
+                                                         <input type="text" class="form-control datepicker" value="<?php echo $this->escape($this->FormData['office_date']) ?>" id="office_date" name="office_date"/>                                                      
+                                                    </div>                                                        
+                                                    </div>                                                     
+                                                    <div class="row">
+                                                    <div class="form-group col-md-4">
+                                                         <label class="col" for="company_telephone">Company Telephone</label>
+                                                         <input required="required" title="Company telephone number is required" type="text" class="form-control" value="<?php echo $this->escape($this->FormData['company_telephone']) ?>" id="company_telephone" name="company_telephone"/>                                                
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                         <label class="col" for="company_fax">Company Fax</label>
+                                                         <input required="required" title="Company fax number is required" type="text" class="form-control" value="<?php echo $this->escape($this->FormData['company_fax']) ?>" id="company_fax" name="company_fax"/>                                                    
+                                                    </div>
+                                                    <div class="form-group col-md-4">                                                      
+                                                    </div>                                                        
+                                                    </div>                                                     
+                                             <div class="row">
+                                                 <section class="well-sm">
+                                                    <p style="text-align: center; color: #006439;">
+                                                        STOP ORDER AUTHORISATION FOR DEDUCTION OF MONTHLY TRADE UNION SUBSCRIPTIONS <br/>(Under labour act, no 11 of 2007, section 66)
+                                                    </p>
+                                                     <p style="color: #006439;">
+                                                         I, the undersigned, not having authorized a stop-order for any Union/having withdrawal all other such authorizations, hereby agree to the monthly deduction the sum of 
+                                                             <?php echo $this->formSelect('deduction' , $this->FormData['deduction'], array('class'=>'control') , array(
+                                                             '1' => 'One percent (1%)',
+                                                             '12' => 'Twelve Namibian dolars(N$12)',
+                                                         )); ?> from my Basic Salary, which shall be paid over to the NAMIBIA TRANSPORT AND ALLIED WORKERS UNION (NATAU) in respect to my membership to the Union                                                     
+                                                     </p>                                                    
+                                                 </section>
+                                             </div>
+                                         </fieldset>
+                            <hgroup class="text-right">
+                                <button name="cmd_save" id="cmd_save" class="btn btn-primary" type="submit"><i class="icon-save"></i> Save Member Data</button>
+                                <button type="button" class="btn btn-default" id="cmd_cancel" name="cmd_cancel_dept"><i class="fa fa-chevron-left"></i> Cancel</button>
+                            </hgroup>
+                                     </form>
+
+                                 </div>
+                                 <?php ?>
+                             </section>                       
+                    </div>
+                    <?php ?>
+		</section>
+</section>
+<section>
+    <!-- modal element -->
+<div id="modal-company" class="modal" style="display:none;">
+<section class="container">
+<div class="col-md-8 col-md-push-2">
+<form name="Jblacform" enctype="multipart/form-data" action="/departments/new" method="post" novalidate="novalidate">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Companies : Creating a new company</h3>
+  </div>
+        <div class="panel-body">
+              <fieldset>
+                  <legend>Member Company`s Details</legend>
+                          <div class="row">
+                          <div class="form-group col-md-12">
+                                <label for="company_name" class="col">Company Name:</label>
+                                <input type="text" name="acompany_name" id="acompany_name" class="form-control" maxlength="128">                                                                                                           
+                          </div>                                                       
+                          </div>
+                          <div class="row">
+                          <div class="form-group col-md-12">
+                                <label for="sector" class="col">Company Category:</label>
+                                <select name="company_sector" class="form-control" id="company_sector">
+                                    <option value="" label=" - Select Category - "> - Select Category - </option>
+                                    <option value="transport" label="Transport Companies">Transport Companies</option>
+                                    <option value="security" label="Security Companies">Security Companies</option>
+                                </select>                                                                                                          
+                          </div>                                                       
+                          </div>                  
+                          <div class="row">
+                          <div class="form-group col-md-6">
+                                <label for="telephone_number" class="col">Telephone No:</label>
+                                <input type="text" name="telephone_number" id="telephone_number" class="form-control" maxlength="24">                                                  
+                          </div>
+                          <div class="form-group col-md-6">
+                                <label for="fax_number" class="col">Fax No:</label>
+                                <input type="text" name="fax_number" class="form-control" id="fax_number" maxlength="24">                                                  
+                          </div>                              
+                          </div>
+                          <div class="row">
+                          <div class="form-group col-md-6">
+                                <label for="contact_person" class="col">Contact Person:</label>
+                                <input type="text" name="contact_person" id="contact_person" class="form-control" maxlength="128">                                                                                                           
+                          </div>
+                          <div class="form-group col-md-6">
+                                <label for="email_address" class="col">E-mail Address:</label>
+                                <input type="text" name="email_address" id="email_address" class="form-control" maxlength="128">                                                                                                           
+                          </div>                              
+                          </div> 
+                          <div class="row">
+                          <div class="form-group col-md-12">
+                                <label for="postal_address" class="col">Postal Address:</label>
+                                <input type="text" name="postal_address" id="postal_address" value="" class="form-control" maxlength="128">                                                                                                          
+                          </div>                                                       
+                          </div>                   
+              </fieldset>
+            <hgroup>
+                <button type="button" class="btn btn-primary" data-loading-text="Saving company..." id="cmd_save" name="cmd_company"><i class="fa fa-save"></i> Save company`s data</button>
+                <button type="button" class="btn btn-default closeMe" id="cmd_cancel" name="cmd_cancel_company"><i class="fa"></i> Cancel</button>
+            </hgroup>            
+        </div>
+</div>
+</form>
+</div>
+</section>
+</div>        
+<div id="modal-department" class="modal" style="display:none;">
+<section class="container">
+<div class="col-md-8 col-md-push-2">
+<form name="Jblacform" enctype="multipart/form-data" action="/departments/new" method="post" novalidate="novalidate">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Departments : Creating a new department</h3>
+  </div>
+        <div class="panel-body">
+              <fieldset>
+                  <legend>Department Details</legend>
+                          <div class="row">
+                          <div class="form-group col-md-8">
+                               <label for="sector_name" class="col">Department Name</label>
+                               <input type="text" value="" name="sector_name" id="sector_name" class="form-control" title="Department name is required." required="required"/>                                                                                  
+                          </div>                                                       
+                          </div>
+                          <div class="row">
+                          <div class="form-group col-md-8">
+                               <label for="sector_description" class="col">Department Description</label>
+                               <input type="text" value="" name="sector_description" id="sector_description" class="form-control" title="Department description is required." required="required">                                                    
+                          </div>                                                       
+                          </div>                                                                                                 
+              </fieldset>
+            <hgroup>
+                <button type="button" class="btn btn-primary" data-loading-text="Saving department..." id="cmd_save" name="cmd_save_dept"><i class="fa fa-save"></i> Save department data</button>
+                <button type="button" class="btn btn-default closeMe" id="cmd_cancel" name="cmd_cancel_dept"><i class="fa"></i> Cancel</button>
+            </hgroup>            
+        </div>
+</div>
+</form>
+</div>
+</section>
+</div> 

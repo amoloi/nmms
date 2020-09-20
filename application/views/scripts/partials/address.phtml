@@ -1,0 +1,61 @@
+<fieldset class="address_wrapper">
+                                             <legend>Address and Contact Details</legend>
+                                             
+                                             <button type="button" onclick="removecontainer(this)" id="close" class="icon-remove" name=""></button>
+                                         <dl>
+                                             <dt id="per_Country-label"><label class="required" for="country">Country</label></dt>
+                                             <dd id="per_Country-element">
+                                                 <input type="hidden" name="type" value="<?php echo $this->escape($this->address_type) ?>" />
+                                             <select class="col_7 column" id="country" name="country">
+                                                 <option value="TZ">Namibia</option>
+                                                 <option value="NAM">Angola</option>
+                                                 <option value="NAM">Tanzania</option>
+                                                 <option value="NAM">South Africa</option>
+                                                 <option value="NAM">South Sudan</option>
+                                             </select></dd>                                             
+                                             <dt id="per_Country-label"><label class="required" for="region">Region</label></dt>
+                                             <dd id="per_Country-element">
+                                             <select class="col_7 column" id="region" name="region">
+                                                 <option value="TZ">Khomas</option>
+                                                 <option value="NAM">Erongo</option>
+                                             </select></dd>
+                                             <dt id="per_Nationality-label"><label class="required" for="city">Town/City</label></dt>
+                                             <dd id="per_Nationality-element">
+                                             <select class="col_7 column" id="city" name="city">
+                                                 <option value="TZ">Windhoek</option>
+                                                 <option value="NAM">Wlavis Bay</option>
+                                             </select></dd>
+                                             <dt id="per_Nationality-label"><label class="required" for="constituency">Constituency</label></dt>
+                                             <dd id="per_Nationality-element">
+                                             <select class="col_7 column" id="constituency" name="constituency">
+                                                 <option value="TZ">Khomasdal</option>
+                                                 <option value="NAM">Katutura</option>
+                                             </select>
+                                             </dd> 
+                                             <dt><label for="physical_address">Physical Address</label></dt>
+                                             <dd><input type="text" class="col_7" name="physical_address" /></dd>
+                                             <dt><label for="postal_address">Postal Address</label></dt>
+                                             <dd><input type="text" class="col_7" name="postal_address" /></dd>                                           
+                                             <dd>
+                                             <table>
+                                                 <thead>
+                                                 </thead>
+                                                 <tbody>
+                                                     <tr>
+                                                         <td><label class="col" for="telphone_number">Teleplone</label></td>
+                                                         <td><label class="col" for="mobile_number">Mobile</label></td>
+                                                         <td><label class="col" for="fax_number">Fax</label></td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td><input type="text" class="col_12" name="telphone_number" /></td>
+                                                         <td><input type="text" class="col_12" name="mobile_number" /></td>
+                                                         <td><input type="text" class="col_12" name="fax_number" /></td>
+                                                     </tr>
+                                                 </tbody>
+                                                 <tfoot>
+
+                                                 </tfoot>
+                                             </table>
+                                         </dd>
+                                         </dl>
+                                         </fieldset>

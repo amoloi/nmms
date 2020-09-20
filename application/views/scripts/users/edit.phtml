@@ -1,0 +1,13 @@
+    <?php echo $this->partial('/partials/_title.phtml',array('title'=>$this->title)) ?>  		
+<section class="col_8">
+    <p>
+    <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+
+    <?php echo $this->form; ?>
+</section>
+<section class="col_4">
+        <figure>
+
+        </figure>
+</section>

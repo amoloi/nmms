@@ -1,0 +1,76 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+
+                    <div> 
+ 		<section>
+                    <div>
+                        <div>
+                            <em>
+                               Member`s finance details.
+                            </em>
+                        </div>
+                        <?php //echo $this->form; ?>
+                        <form method="post" action="/transmissionlicense/sectionc" enctype="multipart/form-data" name="frmECB">
+                                        <fieldset>
+                                            <legend>Member`s Details</legend>
+                                             <table>
+                                                 <thead>
+                                                 </thead>
+                                                 <tbody>
+                                                     <tr>
+                                                         <td><label class="col" for="company_name">Member`s Name</label></td>
+                                                         <td><input type="text" class="col_12" name="company_name" value="<?php echo $this->escape($this->MemberDetails['member_name'] . ' ' . $this->MemberDetails['initials'] . ' ' . $this->MemberDetails['member_surname']); ?>" /></td>
+                                                     <td></td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td><label class="col" for="telephone_number">Company`s Name:</label></td>
+                                                         <td><input type="text" class="col_12" name="telephone_number" value="<?php echo $this->escape($this->MemberDetails['company_name']); ?>" /></td>
+                                                     <td></td>
+                                                     </tr>                                                
+                                                 </tbody>
+                                                 <tfoot>
+
+                                                 </tfoot>
+                                             </table>                               
+                                        </fieldset>
+                                        <fieldset>
+                                             <legend>Member`s monthly contribution details:</legend>
+                                                <table cellspacing="0" cellpadding="0" class="sortable list">
+                                                    <caption>
+                                                    </caption>
+                                                        <thead>
+                                                            <tr class=" ">
+                                                                    
+                                                                    <th rel="1" value="Document Name">Months</th>
+                                                                    <th colspan="2" rel="2" value="Document Type">Member`s Contribution</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <?php foreach ($this->months as $key => $value):?>
+                                                                    <tr class="first">
+                                                                          <?php if($key == 'id'):?>
+                                                                            <input type="hidden" name="<?php echo $this->escape($key); ?>" value="<?php echo $this->escape($value); ?>" /> <?php  ?>
+                                                                          <?php else: ?>
+                                                                                <td style="padding: 5px;" value="<?php echo $this->escape($key); ?>"><label for="<?php echo ucfirst($this->escape($key)); ?>"><?php echo ucfirst($this->escape($key)); ?></label></td>
+                                                                                <td style="padding: 5px;" value="<?php echo $this->escape($key); ?>"><input type="text" class="col_8 column" name="<?php echo ucfirst($this->escape($key)); ?>" id="<?php echo ucfirst($this->escape($key)); ?>" value="<?php echo ucfirst($this->escape($value)); ?>"/></td>                                                                                
+                                                                           <?php endif; ?>
+                                                                      </tr>                
+                                                            <?php endforeach; ?>           
+                                                        </tbody>
+                                                </table>
+                                             
+                                         </fieldset>
+                                     </form>
+                                 </div>
+                                 <?php ?>
+                             </section> 
+                        
+                        <?php //echo $this->form; ?>
+                        
+                    </div>
+                    <?php ?>
+		</section>
+</section>

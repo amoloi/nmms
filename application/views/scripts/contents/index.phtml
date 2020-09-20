@@ -1,0 +1,33 @@
+                    <?php echo $this->partial('/partials/_title.phtml',array('title'=>$this->title)) ?>  		
+		<section class="col_8">
+                    <p>
+                    <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+                    </p>
+                    
+                    <?php  ?>                    
+		</section>
+<section>
+    
+                                        <fieldset>
+                                            <legend>Applicant Details</legend>
+                                            <form method="post" action="/generationlicense/sectionc/" enctype="multipart/form-data" name="frmECB">
+                                                    <dl class="zend_form">
+                                                        <dt id="per_firstName-label"><label class="required" for="per_firstName"><span>(i)</span> Map showing the proposed location where the applicant intends to erect or alter plant, where applicable;</label></dt>
+                                                    <dd id="per_firstName-element">
+                                                    <input type="file" class="col_7 column" value="Upload Map here" id="per_firstName" name="per_firstName"></dd>
+                                                    <dt id="per_lastName-label"><label class="required" for="per_lastName"><span>(ii)</span>  A description of the technical design, including a one-line diagram of the proposed plant, and its surrounding electrical system, which the applicant intents to erect or alter, where applicable;</label></dt>
+                                                    <dd id="per_lastName-element">
+                                                    <input type="file" class="col_7 column" value="" id="per_lastName" name="per_lastName"></dd>
+                                                    <dt id="per_registrationNo-label"><label class="required" for="per_registrationNo"><span>(iii)</span> A description, including a site layout, of the area within which the applicant intends to carry out the activities to be authorised under the licence;</label></dt>
+                                                    <dd id="per_registrationNo-element">
+                                                    <input type="file" class="col_7 column" value="" id="per_registrationNo" name="per_registrationNo"></dd>
+                                                    <dt id="per_Country-label"><label class="required" for="per_Country"><span>(vi)</span> Provide the Coordinates of the geographical location below, each set of coordinates must be separated by a coma ",". </label></dt>
+                                                    <dd id="per_Country-element">
+                                                    <input type="text" class="col_12 column" value="" id="per_registrationNo" name="per_registrationNo"></dd></dd>
+                                                    </dl>
+                                            </form>
+                                        </fieldset>
+</section>
+		<section class="col_4">
+
+		</section>

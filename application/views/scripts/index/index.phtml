@@ -1,0 +1,205 @@
+<section class="row">
+    <div>    
+        <div class="row">
+            <fieldset>
+                <header>
+                    <h3>Members, Companies and Revenues Summary</h3>
+                </header>
+                        <div class="col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                       <?php echo $this->escape($this->TotalMembers['total_member']) ?>
+                                    </h3>
+                                    <p>
+                                        Total Members
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-ios7-people"></i>
+                                </div>
+                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'new','module'=>'') , null , true)) ?>">
+                                    Create a new member <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+
+                        <div class="col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        <?php echo $this->escape($this->TotalCompany['total_member']) ?>
+                                    </h3>
+                                    <p>
+                                        Total Companies
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-grid"></i>
+                                </div>
+                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('controller'=>'companies','action'=>'new','module'=>'') , null , true)) ?>">
+                                    Create a new company <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        N$<?php echo $this->escape($this->TotalRevenue['total_revenue']) ?>
+                                    </h3>
+                                    <p>
+                                        Total Revenues
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-cash"></i>
+                                </div>
+                                <a class="small-box-footer" href="javascript:void(0)">
+                                    Total revenue amount in namibian dollars
+                                </a>
+                            </div>
+                        </div><!-- ./col -->                        
+                    </div>                
+            </fieldset>
+    </div>
+    <!-- Members by gender -->
+
+        <div class="row">
+            <fieldset>
+                <header>
+                    <h3>Members by gender groups</h3>
+                </header>                
+                        <div class="col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>
+                                        <?php echo $this->escape($this->TotalMale['total_member']) ?>
+                                    </h3>
+                                    <p>
+                                        Male Members
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-man"></i>
+                                </div>
+                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'new','module'=>'') , null , true)) ?>">
+                                    Create a new member <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h3>
+                                        <?php echo $this->escape($this->TotalFemale['total_member']) ?>
+                                    </h3>
+                                    <p>
+                                        Female Members
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-woman"></i>
+                                </div>
+                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('controller'=>'members','action'=>'new','module'=>'') , null , true)) ?>">
+                                    Create a new member <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->                
+            </fieldset>
+        </div>
+    <!-- Working states -->
+
+        <div class="row">
+            <fieldset>
+                <header>
+                    <h3>Members by working state</h3>
+                </header>                
+            
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                       <?php echo $this->escape($this->TotalActive['total_member']) ?>
+                                    </h3>
+                                    <p>
+                                        Active Members
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- ./col -->            
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                       <?php echo $this->escape($this->TotalRetired['total_member']) ?>
+                                    </h3>
+                                    <p>
+                                        Retired Members
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- ./col -->            
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                       <?php echo $this->escape($this->TotalResigned ['total_member']) ?>
+                                    </h3>
+                                    <p>
+                                        Resigned Members
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>
+                                        <?php echo $this->escape($this->TotalDismiss['total_member']) ?>
+                                    </h3>
+                                    <p>
+                                        Dismissed Members
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h3>
+                                        <?php echo $this->escape($this->TotalRetrenched['total_member']) ?>
+                                    </h3>
+                                    <p>
+                                        Retrenched Members
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-2 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        <?php echo $this->escape($this->TotalDeceased ['total_member']) ?>
+                                    </h3>
+                                    <p>
+                                        Deceased Members
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- ./col -->
+                </fieldset>
+                    </div>
+            
+</section>    

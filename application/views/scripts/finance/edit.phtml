@@ -1,0 +1,19 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+                    <p>
+                        Please Choose the Nature and Type of License you wish to apply for bellow
+                    </p>
+                    <div>
+                        <?php echo $this->form; ?>
+                    </div>
+                  <!--  <ul class="icons">
+                        <li><a href="<?php echo $this->escape($this->url(array('controller'=>'references','action'=>'codes','module'=>'') , null , true)) ?>">Manage Reference Codes</a></li>
+                        <li><a href="<?php echo $this->escape($this->url(array('controller'=>'references','action'=>'types','module'=>'') , null , true)) ?>">Manage Reference Types</a></li>
+                        
+                    </ul> -->
+                    <?php ?>
+		</section>
+</section>

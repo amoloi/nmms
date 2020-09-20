@@ -1,0 +1,27 @@
+<article class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+                    <p>
+                        <?php echo $this->escape($this->sub_title); ?>
+                    </p>
+                    <div>
+                        <?php //echo $this->form; ?>
+                    </div>
+                  <!--  <ul class="icons">
+                        <li><a href="<?php echo $this->escape($this->url(array('controller'=>'references','action'=>'codes','module'=>'') , null , true)) ?>">Manage Reference Codes</a></li>
+                        <li><a href="<?php echo $this->escape($this->url(array('controller'=>'references','action'=>'types','module'=>'') , null , true)) ?>">Manage Reference Types</a></li>
+                        
+                    </ul> -->
+                    <?php ?>
+		</section>
+    		<section>
+                  <ul class="icons col_12">
+                        <li><a href="<?php echo $this->escape($this->url(array('controller'=>'finance','action'=>'membership','module'=>'') , null , true)) ?>">Membership Finance</a></li>
+                        <li><a href="<?php echo $this->escape($this->url(array('controller'=>'finance','action'=>'company','module'=>'') , null , true)) ?>">Company Finance</a></li>
+                        
+                    </ul>
+                    <?php ?>
+		</section>    
+</article>

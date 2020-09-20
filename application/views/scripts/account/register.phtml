@@ -1,0 +1,98 @@
+<?php echo $this->partial('/partials/_title.phtml',array('title'=>$this->title)) ?>  		
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages(),
+                                                                   'errors'=>$this->errors,)) ?>                        
+    </p>
+    		<section>
+
+                    <div> 
+ 		<section>
+                    <div>
+                        <div>
+                            <em>
+
+                                Please complete all required fields to create your ECB-CLEMS Account.
+
+                                This account can be used to access a variety of CLEMS Services including :
+                                <ul>
+                                    <li>Application for Licenses(Transmission , Distribution and Supply , Import and Export , and Trading)</li>
+                                    <li>Application Status</li>
+                                </ul>
+                            </em>
+                        </div>
+                        <?php //echo $this->form; ?>
+    		<section>
+                    <div>
+                        <?php //echo $this->form; ?>
+                        <form method="post" action="/account/register/" enctype="multipart/form-data" name="frmECB">
+                                         <fieldset>
+                                             <legend>Account Details</legend>
+                                         <dl>
+                                         <dt><label class="col" for="username">Username <span> This is your username.</span></label></dt>
+                                         <dd><input type="text" class="col_7" id="username" value="<?php echo $this->escape($this->data['username']) ?>" name="username" /></dd>                                             
+                                         <dt><label class="col" for="">E-mail <span>We will use this to contact you.</span></label></dt>
+                                         <dd><input type="text" class="col_7" value="<?php echo $this->escape($this->data['email_address']) ?>" name="email_address" /></dd>
+                                         <dt><label class="col" for="password">Password</label></dt>
+                                         <dd><input type="password" id="password" class="col_7" name="password" /></dd>
+                                         <dt><label class="col" for="cpassword">Confirm Password</label></dt>
+                                         <dd><input type="password" id="cpassword" class="col_7" name="cpassword" /></dd>
+                                         <dd>
+                                             <em>
+                                                 Passwords must contain at least one number, both upper and lower case letters, and be at least 8 characters long.
+                                             </em>
+                                         </dd>
+                                         </dl>
+                                         </fieldset>
+                                         <fieldset>
+                                             <legend>Personal Information</legend>
+                                         <dl>
+                                             <dt><label for="first_name">First Name</label></dt>
+                                             <dd><input type="text" id="first_name" class="col_7" value="<?php echo $this->escape($this->data['first_name']) ?>" name="first_name" /></dd>
+                                             <dt><label for="last_name">Last Name</label></dt>
+                                             <dd><input type="text" id="last_name" class="col_7" value="<?php echo $this->escape($this->data['last_name']) ?>" name="last_name" /></dd>
+                                             <dt><label for="jobtitle">Job Title</label></dt>
+                                             <dd><input type="text" id="jobtitle" class="col_7" value="<?php echo $this->escape($this->data['jobtitle']) ?>" name="jobtitle" /></dd>
+                                            <dt></dt>
+                                            <dd class="buttom-wrapper">
+                                                <button type="button" id="ajax" class="icon-hand-down orange" name=""> Add My Address And Contact Details</button>
+                                            </dd> 
+                                         </dl>                                             
+                                         </fieldset>
+                            <div id="address_container">
+                                
+                            </div>
+                            <fieldset>
+                                    <section class="">
+                                                <div class="control">
+                                                     <?php echo $this->captcha->render($this, null) ?>
+                                                </div>
+                                            </section> 
+                                    <section class="">
+                                        <div class="control">
+                                        <label>Please verify yourself by typing the text you see on the image above.</label>
+                                            <div class="input-control text">
+                                                <input id="captcha" type="text" name="captcha" />
+                                                <input type="hidden" name="cid" value="<?php echo $this->captcha->getId() ?>" >
+                                            </div>
+                                        </div>
+                                    </section>
+                            </fieldset>
+                            <hgroup>
+                                <button type="submit" class="col_ frm-btn green" id="cmd_save" name="cmd_save">Create My Account <i class="icon-angle-right"></i></button>
+                            </hgroup>.
+                                     </form>
+
+                                 </div>
+                                 <?php ?>
+                             </section> 
+                                 </div>
+                                 <?php ?>
+                             </section> 
+                        
+                        <?php //echo $this->form; ?>
+                        
+                    </div>
+                    <?php ?>
+		</section>
+</section>

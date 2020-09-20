@@ -1,0 +1,41 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+                    <div>
+                        <?php ?>
+
+                        
+    		<section>
+                    <div>
+                        <form method="post" action="/departments/new" enctype="multipart/form-data" name="NatauForm">
+            <fieldset>
+                  <legend>Department`s details</legend>
+                          <div class="row">
+                          <div class="form-group col-md-8">
+                                                         <label class="col" for="sector_name">Department Name</label>
+                                                         <input type="text" required="required" title="Department name is required." class="form-control" id="sector_name" name="sector_name" value="<?php echo $this->escape($this->FormData['sector_name']) ?>" />                                                                                                          
+                          </div>                                                       
+                          </div>
+                          <div class="row">
+                          <div class="form-group col-md-8">
+                                                         <label class="col" for="sector_description">Department Description</label>
+                                                         <input type="text" required="required" title="Department description is required." class="form-control" id="sector_description" name="sector_description" value="<?php echo $this->escape($this->FormData['sector_description']) ?>" />                                                 
+                          </div>                             
+                          </div>                  
+              </fieldset> 
+                                        
+                <hgroup class="">
+                    <button name="cmd_save" id="cmd_save" class="btn btn-primary" type="submit"><i class="icon-save"></i> Save department's data</button>
+                    <button type="button" class="btn btn-default" id="cmd_cancel" name="cmd_cancel_dept"><i class="fa fa-chevron-left"></i> Cancel</button>
+                </hgroup>
+                                     </form>
+
+                                 </div>
+                                 <?php ?>
+                             </section>                       
+                    </div>
+                    <?php ?>
+		</section>
+</section>

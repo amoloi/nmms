@@ -1,0 +1,85 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+
+                    <div> 
+ 		<section>
+                    <div class="row">
+                            <fieldset>
+                                <header>
+                                    <h3>Member`s Fulname:</h3>
+                                </header>                                
+                                        <div class="form-group col-lg-5">
+                                             <input type="text" class="form-control" disabled="disabled" name="member_name" value="<?php echo $this->escape($this->MemberDetails['member_name'] . ' ' . $this->MemberDetails['initials'] . ' ' . $this->MemberDetails['member_surname']); ?>" />                                                       
+                                             <?php echo $this->formHidden('member_id' , $this->id) ?>
+                                        </div>
+                                        <div class="form-group col-lg-5">
+
+                                        </div>                                                                           
+                            </fieldset>                      
+                    </div>
+                    <div>
+
+                        <form method="post" action="/members/finance" enctype="multipart/form-data" name="frmECB">                                                     
+                                                                                                                               
+
+<fieldset>
+    <?php echo $this->formHidden('member_id' , $this->id) ?> 
+                <header>
+                    <h3>Contribution details:</h3>
+                </header>    
+    <table id="member_contribution">
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Jan</th>
+                <th>Feb</th>
+                <th>Mar</th>
+                <th>Apr</th>
+                <th>May</th>
+                <th>Jun</th>
+                <th>Jul</th>
+                <th>Aug</th>
+                <th>Sep</th>
+                <th>Oct</th>
+                <th>Nov</th>
+                <th>Dec</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php  echo $this->partial('/partials/default_contribution_row.phtml',['contribution' => $this->contribution , 'years'=> $this->years]) ?>            
+           
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><button name="cmd_new_row" id="cmd_new_row" class="btn btn-default" type="button"><i class="fa fa-plus"></i> Add Member`s Finance row</button></td>
+                <td colspan="2" id="progress_indicator"></td>
+                <td></td>
+                <td class=""></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="3" class="text-right">Total contribution:</td>
+                <td><input type="text" value="" id="grosstotal" name="grosstotal" class="form-control"></td>
+            </tr>            
+        </tfoot>
+    </table>                                                                                                                                                                                                      
+</fieldset>                            
+        <hgroup class="form-action">
+           <button name="cmd_save" id="cmd_save" class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Update Member`s Finance</button>
+        </hgroup>                           
+                                     </form>
+                                 </div>
+                                 <?php ?>
+                             </section> 
+                        
+                        <?php //echo $this->form; ?>
+                        
+                    </div>
+                    <?php ?>
+		</section>
+</section>

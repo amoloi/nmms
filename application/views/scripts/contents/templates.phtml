@@ -1,0 +1,60 @@
+                    <?php echo $this->partial('/partials/_title.phtml',array('title'=>$this->title)) ?>  		
+		<section class="col_12">
+                    <p>
+                    <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+                    </p>
+                    <table name="ecbTable" class="ecbList">
+                        <caption>Templates List</caption>
+                        <thead>
+                            <tr>
+                                <th>Template Name</th>
+                                <th>Template file</th>
+                                <th>Template Description</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                               <?php  foreach($this->files as $file): ?>
+                                    <tr>
+                                        <td/><?php echo $this->escape($file->getFilename());   ?> <td>
+                                        <td><?php  echo $this->escape($file->getSize()); ?> </td>
+                                        <td><?php  echo $this->escape($file->getType()); ?> </td>
+                                        <td></td>
+                                    </tr>
+                               <?php endforeach;  ?>                              
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                
+                            </tr>
+                        </tfoot>
+                    </table>                  
+		</section>
+<section class="col_12">
+    
+                                        <fieldset>
+                                            <legend>Template Details</legend>
+                                            <form method="post" action="/<?php echo $this->escape(Zend_Controller_Front::getInstance()->getRequest()->getControllerName()) ?>/<?php echo $this->escape(Zend_Controller_Front::getInstance()->getRequest()->getActionName()) ?>" enctype="multipart/form-data" name="frmECB">
+                                                    <dl class="zend_form">
+                                                        <dt><label class="required" for="per_firstName">Template Name</label></dt>
+                                                        <dd>
+                                                            <input type="text" class="col_7 column" value="" id="per_firstName" name="per_firstName">
+                                                        </dd>
+                                                        <dt><label class="required" for="per_firstName">Template Description</label></dt>
+                                                        <dd>
+                                                            <input type="text" class="col_7 column" value="" id="per_firstName" name="per_firstName">
+                                                        </dd>
+                                                        <dt>
+                                                        <label class="required" for="att_filename">Choose a Template File</label> <em id="lbl_filename"></em>
+                                                        <input type="file" class="" id="att_filename" name="file_template">
+                                                        </dt>
+                                                        <dd>
+                                                            <hr>
+                                                            <input type="submit" class="col_4 column green" value="Save Template" id="cmd_save" name="cmd_save">
+                                                        </dd>                                                        
+                                                    </dl>
+                                            </form>
+                                        </fieldset>
+</section>
+<section class="col_12"></section>

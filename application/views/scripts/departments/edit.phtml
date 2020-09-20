@@ -1,0 +1,58 @@
+<section class="">
+    <p>
+        <?php echo $this->partial('/partials/_notices.phtml',array('flashMessages'=>$this->flashMessages())) ?>                        
+    </p>
+    		<section>
+                    <p>
+                        Please Provide Department details bellow
+                    </p>
+                    <div>
+                        <?php ?>
+
+                        
+    		<section>
+                    <div>
+                        <form method="post" action="/departments/edit" enctype="multipart/form-data" name="NatauForm">
+                            <?php echo $this->formHidden('id' , $this->escape($this->FormData['id']) , array('id'=>'id')) ?>
+                                        <fieldset>
+                                            <legend>Department Details</legend>
+                                            
+                                             <table>
+                                                 <thead>
+                                                 </thead>
+                                                 <tbody>
+                                                     <tr>
+                                                         <td><label class="col" for="sector_name">Department Name</label></td>
+                                                         <td><input type="text" required="required" title="Department name is required." class="col_12" id="sector_name" name="sector_name" value="<?php echo $this->escape($this->FormData['sector_name']) ?>" /></td>
+                                                     <td></td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td><label class="col" for="sector_description">Department Description</label></td>
+                                                         <td><input type="text" required="required" title="Department description is required." class="col_12" id="sector_description" name="sector_description" value="<?php echo $this->escape($this->FormData['sector_description']) ?>" /></td>
+                                                     <td></td>
+                                                     </tr>                                                     
+                                                 </tbody>
+                                                 <tfoot>
+
+                                                 </tfoot>
+                                             </table>                                                     
+                                        </fieldset>
+                                        
+                            <hgroup>
+                                <button name="cmd_save" id="cmd_save" class="col_3 frm-btn green column" type="submit"><i class="icon-save"></i> Save Department Data</button>
+                            </hgroup>
+                                     </form>
+
+                                 </div>
+                                 <?php ?>
+                             </section>                       
+
+                        <section>
+                        </section>
+                  
+
+                        
+                    </div>
+                    <?php ?>
+		</section>
+</section>

@@ -1,0 +1,75 @@
+<section class="row">
+    <div>    
+        <div class="row report">
+            <fieldset>
+
+                        <div class="report-container col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                       Members Report
+                                    </h3>
+                                    <p>
+                                        <em>
+                                            {Fulnam,Company}
+                                        </em>
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-ios7-people"></i>
+                                </div>
+                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('module'=>'','controller' => 'reports', 'action' => 'members'), null, true)) ?>">
+                                    Create report <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+
+                        <div class="report-container col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        Members Report
+                                    </h3>
+                                    <p>
+                                        <em>
+                                            {Fulnam,DOB, gender and Date Joined}
+                                        </em>                                        
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-clipboard"></i>
+                                </div>
+                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('module'=>'','controller' => 'reports', 'action' => 'members-report'), null, true)) ?>">
+                                    Create report <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="report-container col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                       Export Report
+                                    </h3>
+                                    <p>
+                                        <em>
+                                            {Export a report as MS excel}
+                                        </em>
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-document"></i>
+                                </div>
+                                <a class="small-box-footer" href="<?php echo $this->escape($this->url(array('module'=>'','controller' => 'reports', 'action' => 'exportxls'), null, true)) ?>">
+                                    Export report <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->                        
+                                   
+            </fieldset>
+            </div> 
+    </div>
+</section>   
+<section class="row"></section>
